@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- colors strings -->
+
+	<string name="app_name">user guide</string>
+	<string name="ek_img_content">ExportKit Image</string>
+	<string name="colors_ek3_string">Colors</string>
+	<string name="_01_string">01</string>
+	<string name="accent_string">Accent</string>
+	<string name="__e0e0e0_string">#E0E0E0</string>
+	<string name="__232323_string">#232323</string>
+	<string name="primary_string">Primary</string>
+	<string name="__4e6bf9_string">#4E6BF9</string>
+</resources>
