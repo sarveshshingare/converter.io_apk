@@ -41,7 +41,9 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    boolean isConnected = false;
+    //    initialization
+    boolean isConnected = false;    //variable to check whether device is connected to internet
+
     TextView convertFromDropdownTextView, convertToDropdownTextView, conversionRateText;
     EditText amountToconvert;
     Button convertButton;
@@ -64,12 +66,16 @@ public class MainActivity extends AppCompatActivity {
         conversionRateText = findViewById(R.id.conversionRateText);
         amountToconvert = findViewById(R.id.amountToConvertValueEditText);
 
-        amountToconvert.requestFocus();
 
+        amountToconvert.requestFocus();  // request focus to editText when app starts
+
+//        making array list
         arrayList = new ArrayList<>();
         for (String i : country) {
             arrayList.add(i);
         }
+
+//        from drop down menu
         convertFromDropdownTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+
+//        To drop down menu
 
         convertToDropdownTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+//        Convert Button
         convertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -186,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Creating Alert Dialog box
     private void AlertDialogBox() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -195,14 +205,15 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-               dialog.cancel();
+                dialog.cancel();
             }
         });
-        AlertDialog alertDialog=builder.create();
+        AlertDialog alertDialog = builder.create();
         alertDialog.show();
 
     }
 
+    //method to check network state
     private void registerNetworkCallBack() {
 
         try {
@@ -227,9 +238,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+// method to convert currency
 
     private String getConverionRate(String convertFromValue, String convertToValue, Double amountToConvert) {
         RequestQueue queue = Volley.newRequestQueue(this);
+
+        // Use of free API (freecurrencyapi)
         String url = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_6tYVI92HDbwZplO3yu8pJfKzwW1NhvOJLAvpohbq&currencies=" + convertToValue + "&base_currency=" + convertFromValue;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -258,6 +272,7 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
+    //  method to round Up the value
     public static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();
         BigDecimal bd = BigDecimal.valueOf(value);

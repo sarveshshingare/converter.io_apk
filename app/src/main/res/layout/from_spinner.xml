@@ -12,25 +12,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Select Country"
-        android:textSize="20sp"
         android:textColor="@color/textViewColor"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/searchtextViewColor"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/background_edittext"
         android:hint="Search"
         android:padding="12dp"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:textColorHint="@color/searchtextViewColor" />
 
     <ListView
         android:id="@+id/list_view"
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 </LinearLayout>

@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
     android:background="@color/bgcolor"
-    >
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -21,14 +20,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:textColorHint="@color/searchtextViewColor"
         android:background="@drawable/background_edittext"
         android:hint="Search"
         android:padding="12dp"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:textColorHint="@color/searchtextViewColor" />
 
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 </LinearLayout>
